@@ -27,7 +27,7 @@ You can use four characters at the same time, I opted for:
 - Merchant
 
 The merchant is the most capable character so far. Most people only use it to sell things on the marketplace.
-Mine acts as s support-character for the party, so they don't get interrupted and can keep farming 100% of the time.
+Mine acts as support-character for the party, so they don't get interrupted and can keep farming 100% of the time.
 
 ## What the code does
 
@@ -41,7 +41,7 @@ Here's a list of wha tthe code is capable of so far:
 - Hotkeys: To load characters / create a party / stop characters
 - Auto-move to the designated farming spot.
 - Auto-Farm designated mob's
-- Auto-use potions (Heal & mana)
+- Auto-use potions (heal & mana)
 - Auto-Kite enemies. (All characters (Mage, Priest, Ranger) are ranged characters.)
 - Characters can go to town, buy potions and bring gold to the bank (Module "goToTown"), but it's deactivated by default, because the merchant takes care of this now.
 
@@ -55,7 +55,7 @@ Here's a list of wha tthe code is capable of so far:
 
 The merchant can sell your loot on the marketplace. You can just drop your loot inside his store, set a price and he'll sell it.
 
-I decided that because the merchant cannot farm / generate gold on his own, he should act as a support characters for the "productive" characters.
+I decided that, because the merchant cannot farm / generate gold on his own, he should act as a support characters for the "productive" characters.
 
 So he takes care of a lot of things for you!
 
@@ -72,35 +72,35 @@ Every 15 minutes, he does a round:
 - Deposits all gold above a certain limit in the bank. (Remember, to auto-buy things, he cannot deposit all gold, he needs to keep some)
 - Goes back to town and opens up his little stand
 
-Once the stand is open, he continue shos work:
+Once the stand is open, he continues his work:
 
-- He auto-crafts (compound) multiple items to a higher level item
-- He then puts these higher level items in his stand for sale
-- He can sell "trash", so your inventory doesn't fill up. You can designate what is considered "trash" depending on what your current enemies drop.
-- He tidies his inventory so there are no gaps (from crafting / selling things)
-- He gives other players the "merchant's luck"-buff, with a chance to duplicate an item from them
-- He also auto-buys cheap items from other merchants. If they sell an item under it's value, he'll buy it automatically. 
+- Auto-craft (compound) multiple items to a higher level item
+- Put these higher level items in the stand for sale
+- Sell "trash", so your inventory doesn't fill up. You can designate what is considered "trash" depending on what your current enemies drop.
+- Tidy the inventory so there are no gaps (from crafting / selling things)
+- Give other players the "merchant's luck"-buff, with a chance to duplicate an item from them
+- Auto-buy cheap items from other merchants. If they sell an item under it's value, he'll buy it automatically. 
 
 ## General functions
 
-There's a  module called "helperFunctions": It holds functions that are useful to all characters in one pplace (not to waste module-slots). They are quite helpful and take car eof a lot of things:
+There's a  module called "helperFunctions": It holds all functions in one place which are useful to every character (not to waste module-slots). They are quite helpful and take care of a lot of things:
 
 - Starting / stopping characters and creating a party
 - Finding a target to attack
 - Auto-Transfer loot (to the merchant)
 - Relocate potions to slots that are not tansferred to the merchant
-- handle party-invitations
+- Handle party-invitations
 
 ## To do's
 
 - At the moment, I do not have all skills unlocked. Therefor, I have not written code for them yet.
-- Also, I farm weak enemies. There is no party-coordination going on atm. I chose to farm weak mob's to be able to 1-shot them  (which ideally gives me 3 mob kills per tick). Coordinating the party would interfere with maximum farming efficiency. (If the characters would follow a leader for example, they could miss out on farming a few tics, because they're walking). Once I start farming harder npc's, the good (and complex) part of the game starts. Character coordination, placing them in a certain fashion etc.
+- Also, I farm weak enemies. There is no party-coordination going on atm. I chose to farm weak mob's to be able to 1-shot them  (which ideally gives me 3 mob kills per tick). Coordinating the party would interfere with maximum farming efficiency. (If the characters would follow a leader for example, he could miss out on farming a few tics, because he's walking). Once I start farming harder npc's, the good (and complex) part of the game starts. Character coordination, placing each character in a certain fashion for maximum efficiency, better kiting etc.
 - The npc's I farm don't drop weapons or armor. So upgrading is not implemented yet
 - The merchant should bring the really good stuff to the bank on it's own. But these drops are so rare, I haven't implemented that yet
 - A ton of other things I don't even know about yet is also not done yet. :)
 
 ## Recap
 
-The code can run on it's own several days if you tweak tha values correctly. The merchant's inventory requires attention from time to time, because I don't want to auto-sell good items, so they keep piling up (intentionally). You can tweak that of course, the code is there.
+The code can run on it's own several days, if you tweak tha values correctly. The merchant's inventory requires attention from time to time, because I don't want to auto-sell good items, so they keep piling up (intentionally). You can tweak that of course, the code is there.
 
 Enjoy!
