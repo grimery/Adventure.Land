@@ -17,6 +17,10 @@ Here are two great guides that will give you an overview over the game:
 
 The game lets you create multiple modules, which I did, to keep things organized.
 
+Also, many players hardcode their character's names everywhere in the game. I tried to avoid that as much as possible, so I don't have to touch many places in the code when starting a new character.
+
+Most code I've seen has one "main" loop that runs ~250ms, so 4 times per second. This is suggested for optimal farming performance. This code does have two "main" loops. Running everything every 250 milliseconds might give you great farming-performance, but it's horrible for performance overall. There is a "tierTwo" loop that only runs every 3 seconds. All non-essential routines get called from there.
+
 ## The Characters
 
 You can use four characters at the same time, I opted for:
@@ -27,14 +31,14 @@ You can use four characters at the same time, I opted for:
 - Merchant
 
 The merchant is the most capable character so far. Most people only use it to sell things on the marketplace.
-Mine acts as support-character for the party, so they don't get interrupted and can keep farming 100% of the time.
+Because the merchant cannot generate gold on it's own, it acts as support-character for the party, so they don't get interrupted and can keep farming 100% of the time.
 
 ## What the code does
 
 This is a work in progress, and things might change. I don't have a high level yet, and can only farm low level enemies.
-Once I can go for harder enemies, the code might change.
+Once I can go for harder enemies, the code will certainly change.
 
-Here's a list of wha tthe code is capable of so far:
+Here's a list of what the code is capable of so far:
 
 ## General
 
@@ -50,6 +54,8 @@ Here's a list of wha tthe code is capable of so far:
 - The mage can: auto-attack enemies (farming), energize partymembers, burst enemies
 - The Ranger is also capable to auto-attack enemies (farming), he can use the "hunters mark" and he uses the supertshots (higher dps) skill on enemies
 - The priest also can farm on it's own, heal partymembers and heal the whole party at once if needed. He can also debuff (curse) enemies
+
+The individual character modules are still very basic. Farming low-level mob's did not require to write complex code or even character interaction so far.
 
 ### The merchant
 
@@ -67,8 +73,9 @@ Every 15 minutes, he does a round:
 - Delivers the potions to all characters
 - Gets all their items...
 - ...and all their gold
-- Buys scrolls if needed to upgrade the items he got
-- Exchanges any gems / chests he got
+- Goes back to the market
+- Buys scrolls (if needed) to upgrade the items he got from the farming characters
+- Exchanges any gems / chests he received
 - Deposits all gold above a certain limit in the bank. (Remember, to auto-buy things, he cannot deposit all gold, he needs to keep some)
 - Goes back to town and opens up his little stand
 
@@ -94,9 +101,9 @@ There's a  module called "helperFunctions": It holds all functions in one place 
 ## To do's
 
 - At the moment, I do not have all skills unlocked. Therefor, I have not written code for them yet.
-- Also, I farm weak enemies. There is no party-coordination going on atm. I chose to farm weak mob's to be able to 1-shot them  (which ideally gives me 3 mob kills per tick). Coordinating the party would interfere with maximum farming efficiency. (If the characters would follow a leader for example, he could miss out on farming a few tics, because he's walking). Once I start farming harder npc's, the good (and complex) part of the game starts. Character coordination, placing each character in a certain fashion for maximum efficiency, better kiting etc.
+- Also, I farm weak enemies. There is no party-coordination going on atm. I chose to farm weak mob's to be able to 1-shot them  (which ideally gives me 3 mob kills per tick). Coordinating the party would interfere with maximum farming efficiency. (If the characters would follow a leader for example, he could miss out on farming a few ticks, because he's walking). Even kiting is turned of atm. Once I start farming harder npc's, the good (and complex) part of the game starts. Character coordination, placing each character in a certain fashion for maximum efficiency, better kiting etc.
 - The npc's I farm don't drop weapons or armor. So upgrading is not implemented yet
-- The merchant should bring the really good stuff to the bank on it's own. But these drops are so rare, I haven't implemented that yet
+- The merchant should bring the really good loot to the bank on it's own. But these drops are so rare, I haven't implemented that yet
 - A ton of other things I don't even know about yet is also not done yet. :)
 
 ## Recap
