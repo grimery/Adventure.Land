@@ -44,19 +44,18 @@ Here's a list of what the code is capable of so far:
 ## General
 
 - Hotkeys: To load characters / create a party / stop characters
-- Auto-move to the designated farming spot.
+- Auto-move to the designated farming spot, over several maps / continents.
 - Auto-Farm designated mob's
 - Auto-use potions (heal & mana)
 - Auto-Kite enemies. (All characters I use (Mage, Priest, Ranger) are ranged characters.)
-- Characters can go to town, buy potions and bring gold to the bank (Module "goToTown"), but it's deactivated by default, because the merchant takes care of this now.
 
 ## Individual characters
 
-- The mage can: auto-attack enemies (farming), energize partymembers, burst enemies
-- The Ranger is also capable to auto-attack enemies (farming), he can use the "hunters mark" and he uses the supertshots (higher dps) skill on enemies
+- The mage can: auto-attack enemies (farming), energize partymembers, burst enemies and shield hurt allies from damage
+- The Ranger is also capable to auto-attack enemies (farming), he can use the "hunters mark" and he uses the supertshots (higher dps) skill on enemies. He also uses Multishot for optimal farming efficiency.
 - The priest also can farm on it's own, heal partymembers and heal the whole party at once if needed. He can also debuff (curse) enemies
 
-The individual character modules are still very basic. Farming low-level mob's did not require writing complex code, or even character interaction, so far.
+The individual character modules are still very basic. Farming low-level mob's did not require writing complex code, or even character interaction (beyond healing), so far.
 
 ### The merchant
 
