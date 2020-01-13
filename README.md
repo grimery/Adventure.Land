@@ -14,6 +14,14 @@ These are two great guides that will give you an overview over the game:
 - [Sin's Guide to life in Adventure Land](https://steamcommunity.com/sharedfiles/filedetails/?id=1636142608)
 - [FAQ's by Trexnamedtom](https://steamcommunity.com/sharedfiles/filedetails/?id=1640326394)
 
+## Battletested
+
+This code is simple, but *it works*, I made sure of that.
+
+I only publish a new version of my Adventure.Land scripts if they ran flawlessly over several days.
+
+So you can be sure, if you use (some or all of) my code, *it works, and it's stable and reliable*.
+
 ## Code overview
 
 The game lets you create multiple modules, which I did, to keep things organized.
