@@ -119,3 +119,7 @@ There's a  module called "helperFunctions": It holds all functions in one place 
 The code can run on it's own several days, if you tweak tha values correctly. The merchant's inventory requires attention from time to time, because I don't want to auto-sell good items, so they keep piling up (intentionally). You can tweak that of course, the code is there.
 
 Enjoy!
+
+## More Information
+
+[I blogged about this project in more detail](https://breaksome.tech/adventure-land-tips/)
