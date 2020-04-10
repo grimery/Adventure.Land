@@ -7,20 +7,6 @@ The basic idea of the game itself is super appealing: The most forbidden thing i
 
 (This is not my first coding game, I also played [Screeps](https://screeps.com/), and you can [check out my source here](https://github.com/johnnyawesome/Screeps)).
 
-## Adjustments you have to make
-
-I tried to make the code as open as possible. However, you have to change four things in the "Main"-Module so the code knows what you want to farm and who your merchant is.
-
-
-```javascript
-//Farming spots are found in G.maps.main
-const farmMonsterName = "arcticbee";
-const farmMap = "winterland";
-const farmMonsterNr = 10;
-const merchantName = "YourMechantsName";
-```
-
-
 ## Getting started
 
 These are two great guides that will give you an overview over the game:
@@ -119,6 +105,30 @@ There's a  module called "helperFunctions": It holds all functions in one place 
 - Auto-Transfer loot (to the merchant)
 - Relocate potions to slots that are not tansferred to the merchant
 - Handle party-invitations
+
+## Adjust the code
+
+I tried to make the code as open as possible. However, you have to change four things in the "Main"-Module, so the code knows *what you want to farm* and *who your merchant is*.
+
+Adjust these four variables, and you're good to go:
+
+```javascript
+//Farming spots are found in G.maps
+const farmMonsterName = "arcticbee";
+const farmMap = "winterland";
+const farmMonsterNr = 10;
+const merchantName = "YourMechantsName";
+```
+- "farmMonsterName" needs to be a string. It's the name of the [monster you want to farm](https://adventure.land/docs/guide/all/monsters) (e.g. "arcticbee" or "crab").
+- "farmMap" also neets to be a string. It's the [map](https://adventure.land/docs/code/data/maps) you want to farm on. There are different maps, like "main" or "halloween" or  "winterland". Assign the map you want to farm on to "farmMap".
+- "farmMonsterNr" *is important*! Some monsters spawn on *multiple locations*!
+  Example: On the "main" continent, there are several spawns of bees.
+  - Put your character on the "main" map and enter this command into your console and run it: **smart_move({to:"bee"});**
+  - *Run the command several times*.
+  - Even though you entered the *same* command multiple times, your character will walk to *different* spawns of bees.
+  - Look into [G.maps](https://adventure.land/docs/code/data/maps), click the map you want to farm on and look for the monster-name you want to farm. If there are multiple spawns, check the "count" variables for each spawn. *Find one that is unique!*
+  "farmMonsterNr" ensures, even though there are several spawns of the same monster on the same map, *your complete party farms the same spawn and does not get scattered to several different spawns*
+- "merchantName" must be the name of your merchant, as a string. It's used to transfer the farming-party's loot / gold to the merchant etc.
 
 ## To do's
 
