@@ -127,10 +127,10 @@ const merchantName = "YourMechantsName";
   - *Run the command several times*.
   - Even though you entered the *same* command multiple times, your character will walk to *different* spawns of bees.
   - Your farming-party will be scattered because of this
-  - The way to fix this is tp look at all the spawns and find one that has a unique "count"- variable (which is the cound of monsters that spawn there)
-  - Look into [G.maps](https://adventure.land/docs/code/data/maps), click the map you want to farm on and look for the monster-name you want to farm. If there are multiple spawns, check the "count" variables for each spawn. *Find one that is unique!*
+  - The way to fix this is to look at all the spawns and find one that has a unique "count"-variable (which is the count of monsters that spawn there)
+  - Look into [G.maps](https://adventure.land/docs/code/data/maps), click the map you want to farm on and look for the monster-name you want to farm. If there are multiple spawns, check the "count" variables for each spawn. *Find a "count"-value that is unique!*
   "farmMonsterNr" ensures, even though there are several spawns of the same monster on the same map, *your complete party farms the same spawn and does not get scattered to several different spawns*
-  - If you found a spawn where "count" is different from all the other spawns for that monster, it's unique and all your characters will go to the same spawn of monsters. Yay!
+  - If you found a spawn where "count" is different from all the other spawns for that monster, it's unique and all your characters will go to the same spawn to farm monsters. Yay!
 - "merchantName" must be the name of your merchant, as a string. It's used to transfer the farming-party's loot / gold to the merchant etc.
 
 ## To do's
