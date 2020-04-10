@@ -1,22 +1,22 @@
 function loadCharacters(){
-	start_character("Your-Character-1", "MainLoop");
-	start_character("Your-Character-2", "MainLoop");
-	start_character("Your-Character-3", "MainLoop");
+	start_character("Magos", "MainLoop");
+	start_character("Hierophant", "MainLoop");
+	start_character("Patroclus", "MainLoop");
 	log("Loading Characters...");
 	setTimeout(initParty, 8000);
 }
 
 function initParty(){
-	send_party_invite("Your-Character-1");
-	send_party_invite("Your-Character-2");
-	send_party_invite("Your-Character-3");
+	send_party_invite("Magos");
+	send_party_invite("Hierophant");
+	send_party_invite("Patroclus");
 	log("Party Invites sent!");
 }
 
 function stopCharacters(){
-	stop_character("Your-Character-1");
-	stop_character("Your-Character-2");
-	stop_character("Your-Character-3");
+	stop_character("Magos");
+	stop_character("Hierophant");
+	stop_character("Patroclus");
 	log("Characters stopped!");
 }
 

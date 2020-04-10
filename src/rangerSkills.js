@@ -29,3 +29,4 @@ function rangerSkills(target, farmMonsterName){
     }
 }
 ​
+​

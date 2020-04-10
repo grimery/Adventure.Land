@@ -1,14 +1,14 @@
 let reserveMoney = 500000;
 let minCompoundScrolls = 100;
 let trashName = ["cclaw", "crabclaw", "shoes1", "coat1", "pants1",
-				"wshoes", "", "spores", "beewings", "wcap", "", 
-				"firestaff", "strearring", "stramulet", "", "", "", 
+				"wshoes", "", "spores", "beewings", "wcap", "bfur", 
+				"firestaff", "strearring", "stramulet", 
+				"egg0", "egg1", "egg2", "egg3", "egg4", "egg5", 
+				"egg6", "egg7", "egg8", "", "", "", 
 				"", "", "", "", "", "", 
 				"", "", "", "", "", "", 
 				"", "", "", "", "", "", 
-				"", "", "", "", "", "", 
-				"", "", "", "", "", "", 
-				"", "", "", "", "", "", 
+				"redenvelopev1", "redenvelopev2", "redenvelopev3", "", "", "", 
 				"ornament", "mistletoe", "candycane", "merry", "", "",
 				"x0", "x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8"];
 let mPotionThreshold = 700;
@@ -37,7 +37,8 @@ function merchantSkills(){
 	if (new Date().getMinutes() === 00
 		|| new Date().getMinutes() === 15
 		|| new Date().getMinutes() === 30
-	   	|| new Date().getMinutes() === 45){
+	   	|| new Date().getMinutes() === 45
+	    || new Date().getMinutes() === 38){
 
 		let farmCoord = getFarmingSpot(farmMonsterName, farmMap, farmMonsterNr, "coord");
 		
@@ -47,22 +48,25 @@ function merchantSkills(){
 		//Buy Potions
 		buyPotions();
 		relocateItems();
-
-		smart_move({x: farmCoord.x, y: farmCoord.y}, () => {
-			tranferPotions();
-			merchantsLuck();
-			//Buy Scrolls
-			smart_move({to:"scrolls"}, () => {
-				buyScrolls();
-				//Exchange gems
-				smart_move({to:"exchange"}, () => {
-					exchangeGems();
-					//Deposit Money
-					smart_move({to:"bank"}, () => {
-						depositMoney();
-						depositItems();
-						//Go to the market and sell things
-						openMerchantStand();
+		
+		
+        smart_move({to:farmMap}, () => {
+			smart_move({x: farmCoord.x, y: farmCoord.y}, () => {
+				tranferPotions();
+				merchantsLuck();
+				//Buy Scrolls
+				smart_move({to:"scrolls"}, () => {
+					buyScrolls();
+					//Exchange gems
+					smart_move({to:"exchange"}, () => {
+						exchangeGems();
+						//Deposit Money
+						smart_move({to:"bank"}, () => {
+							depositMoney();
+							depositItems();
+							//Go to the market and sell things
+							openMerchantStand();
+						});
 					});
 				});
 			});
