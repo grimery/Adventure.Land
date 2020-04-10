@@ -7,6 +7,20 @@ The basic idea of the game itself is super appealing: The most forbidden thing i
 
 (This is not my first coding game, I also played [Screeps](https://screeps.com/), and you can [check out my source here](https://github.com/johnnyawesome/Screeps)).
 
+## Adjustments you have to make
+
+I tried to make the code as open as possible. However, you have to change four things in the "Main"-Module so the code knows what you want to farm and who your merchant is.
+
+
+```javascript
+//Farming spots are found in G.maps.main
+const farmMonsterName = "arcticbee";
+const farmMap = "winterland";
+const farmMonsterNr = 10;
+const merchantName = "YourMechantsName";
+```
+
+
 ## Getting started
 
 These are two great guides that will give you an overview over the game:
