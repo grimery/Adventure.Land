@@ -49,15 +49,34 @@ function getTarget(farmTarget){
 	if(target) return target;
 	
 	if(!target){
-
+		//Returns monster that targets character
 		target = get_nearest_monster({
-			min_xp:100,
+			target:character.name
+		});
+		if(target){
+			change_target(target);
+			return target;
+		}
+		//Returns monster that targets party-member
+		parent.party_list.forEach(partyMemberName => {
+			target = get_nearest_monster({
+				target:partyMemberName
+			});
+			if(target){
+				change_target(target);
+				return target;
+			}
+		});
+		//Returns any monster that targets nobody
+		target = get_nearest_monster({
 			max_att:150,
 			type:farmTarget,
 			no_target:true
 		});
-		change_target(target);
-		return target;
+		if(target){
+			change_target(target);
+			return target;
+		}
 	}
 }
 
