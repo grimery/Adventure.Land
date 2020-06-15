@@ -181,7 +181,9 @@ function findTriple(level){
 		if(character.items[i]
 		   	&& character.items[i].level === level
 		   	//Weapons can't be compounded. If item has attack attr, no compound
-		 	&& !G.items[character.items[i].name].attack){
+		 	&& !G.items[character.items[i].name].attack
+		 	//Armor can't be compounded. If item has armor attr, no compound
+		 	&& !G.items[character.items[i].name].armor){
 			for(let j = i + 1; j <= 34; j++){
 				if(character.items[j]
 				   && character.items[j].name === character.items[i].name
